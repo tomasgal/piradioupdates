@@ -11,9 +11,6 @@
 #
 # By default this script does nothing.
 
-#/sbin/blockdev --setra 2048 /dev/mmcblk0
-#mkdir /var/log/apache2 /var/log/apt /var/log/fsck /ntpstats /samba && chown ntp:ntp /var/log/ntpstats/
-/etc/init.d/mini-httpd restart
 ls /radio_nas/*.mp3 | sort -R | head -1000 > /var/ramdrive/list.txt
 
 while :

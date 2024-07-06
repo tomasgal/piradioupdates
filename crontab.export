@@ -3,4 +3,5 @@
 @hourly ls /radio_nas/*.mp3 | sort -R | head -1000 > /var/ramdrive/list.txt
 @reboot sleep 5 && systemctl disable rsyslog
 @reboot sleep 60 && iw dev wlan0 set power_save off
+@reboot sleep 80 && /etc/init.d/mini-httpd restart
 * * * * * for i in {1..6}; do ps `pgrep sox` | sed -n -e 's/.mp3 -t wav.*//' -e 's/.*radio_nas\///p' > /var/ramdrive/index.html & sleep 10; done
