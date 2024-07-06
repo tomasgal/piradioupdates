@@ -1,4 +1,5 @@
 # m h  dom mon dow   command
+@reboot sleep 10 && cp /favicon.ico /var/ramdrive
 @hourly ls /radio_nas/*.mp3 | sort -R | head -1000 > /var/ramdrive/list.txt
 @reboot sleep 5 && systemctl disable rsyslog
 @reboot sleep 60 && iw dev wlan0 set power_save off
